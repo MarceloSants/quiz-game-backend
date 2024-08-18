@@ -14,6 +14,9 @@ const {
   defineTables,
 } = require('./src/database');
 
+var cors = require('cors');
+app.use(cors());
+
 app.use('/questions', questionsRoute);
 app.use('/themes', themesRoute);
 

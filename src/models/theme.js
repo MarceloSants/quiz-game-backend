@@ -5,6 +5,7 @@ function defineThemes() {
   sequelize.define('themes', {
     code: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
+    color: { type: DataTypes.STRING, allowNull: false },
   });
 }
 

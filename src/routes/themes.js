@@ -9,9 +9,9 @@ const jsonParser = bodyParser.json();
 
 router.post('/', jsonParser, async (req, res) => {
   // console.log(req.body);
-  const { code, name } = req.body;
+  const { code, name, color } = req.body;
 
-  const theme = await addTheme(code, name);
+  const theme = await addTheme(code, name, color);
 
   res.send({ id: theme.id });
 });

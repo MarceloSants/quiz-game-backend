@@ -2,10 +2,11 @@ const { sequelize } = require('./config/sequelize');
 const { defineQuestions } = require('./models/question');
 const { defineThemes } = require('./models/theme');
 
-async function addTheme(code, name) {
+async function addTheme(code, name, color) {
   const newTheme = await sequelize.models.themes.create({
     code: code,
     name: name,
+    color: color,
   });
 
   return newTheme;
@@ -45,7 +46,7 @@ async function getQuestions(count = -1, themeId = null) {
   } else {
     questions = await getAllQuestion();
   }
-  // questions = await sequelize.models.questions.findAll();
+  questions = await sequelize.models.questions.findAll();
 
   return questions;
 }
