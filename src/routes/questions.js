@@ -25,9 +25,6 @@ router.post('/', jsonParser, async (req, res) => {
 // });
 
 router.get('/', async (req, res) => {
-  // console.log('get count and theme');
-  // console.log('req: ');
-  // console.log(req.query);
   const { count, themeId } = req.query;
 
   const questions = await getQuestions(count, themeId);

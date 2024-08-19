@@ -46,12 +46,12 @@ async function getQuestions(count = -1, themeId = null) {
   } else {
     questions = await getAllQuestion();
   }
-  questions = await sequelize.models.questions.findAll();
 
   return questions;
 }
 
 async function getQuestionWithTheme(count, themeId) {
+  console.log('---------------------');
   console.log('getQuestionWithTheme');
   console.log('count: ' + count + ' :: ' + 'themeId: ' + themeId);
   const questions = await sequelize.models.questions.findAll({
